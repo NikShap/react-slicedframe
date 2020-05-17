@@ -53,5 +53,10 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@types/classnames": "^2.2.10",
+    "classnames": "^2.2.6",
+    "react-jss": "^10.1.1"
+  }
 }
