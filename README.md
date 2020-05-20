@@ -1,6 +1,4 @@
-<center>
-  <img src="https://i.imgur.com/xKDxMgw.gif" />
-</center>
+![](example/public/demo.gif)
 
 # slicedframe
 
