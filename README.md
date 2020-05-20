@@ -1,8 +1,12 @@
+<center>
+  <img src="https://i.imgur.com/xKDxMgw.gif" />
+</center>
+
 # slicedframe
 
 > Component for showing set of sliced images
 
-[![NPM](https://img.shields.io/npm/v/slicedframe.svg)](https://www.npmjs.com/package/slicedframe) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+<!-- [![NPM](https://img.shields.io/npm/v/slicedframe.svg)](https://www.npmjs.com/package/slicedframe) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) -->
 
 ## Install
 
@@ -15,16 +19,24 @@ npm install --save slicedframe
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'slicedframe'
-import 'slicedframe/dist/index.css'
+import SlicedFrame from 'slicedframe'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const images = [
+  // set of images
+]
+
+const Example = () => {
+  return (
+    <SlicedFrame
+      images={images}
+      template="/"
+      width={600},
+      height={280},
+    />
+  )
 }
 ```
 
-## License
+<!-- ## License
 
-MIT © [NikShap](https://github.com/NikShap)
+MIT © [NikShap](https://github.com/NikShap) -->
