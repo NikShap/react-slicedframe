@@ -4,7 +4,9 @@ import Props from './interface';
 const getWidthHeight = (type: string, defaultValue: string | number) => (
   props: Props
 ) => {
-  if (Number.isInteger(props[type])) return `${props[type]}px`;
+  if (/^\d*$/gm.test(props[type])) {
+    return `${props[type]}px`;
+  }
   if (!props[type]) return defaultValue;
   return props[type];
 };

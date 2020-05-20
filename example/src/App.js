@@ -10,14 +10,35 @@ const App = () => {
     'https://avatars.mds.yandex.net/get-pdb/225396/b42d7dc3-e39f-44b1-bdbe-d222f860e426/s1200?webp=false',
     'https://avatars.mds.yandex.net/get-pdb/1866711/59aca736-3c0f-4711-85d1-dcc8ed514636/s1200?webp=false',
   ]
+  const widthHeight = {
+    width: 600,
+    height: 280,
+  };
 
   return (
-    <SlicedFrame
-      images={images}
-      slices="/"
-      className="test"
-    />
-  )
+    <div className="container">
+      <SlicedFrame
+        images={images}
+        template="/"
+        {...widthHeight}
+      />
+      <SlicedFrame
+        images={images}
+        template="\"
+        {...widthHeight}
+      />
+            <SlicedFrame
+        images={images}
+        template="\/"
+        {...widthHeight}
+      />
+      <SlicedFrame
+        images={images}
+        template="/\"
+        {...widthHeight}
+      />
+    </div>
+  );
 }
 
 export default App

@@ -13,7 +13,19 @@ const ImagePolygon = (props: Props) => {
     }
   }, [props.index, props.image, props.onImageClick]);
 
-  return <div className={mergedClasses} onClick={handleClick} />;
+  const handleMouseOver = React.useCallback(() => {
+    if (typeof props.onImageHover === 'function') {
+      props.onImageHover(props.index, props.image);
+    }
+  }, [props.index, props.image, props.onImageClick]);
+
+  return (
+    <div
+      className={mergedClasses}
+      onClick={handleClick}
+      onMouseOver={handleMouseOver}
+    />
+  );
 };
 
 export default ImagePolygon;

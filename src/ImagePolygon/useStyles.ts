@@ -23,7 +23,7 @@ const slicesTemplates = {
 };
 
 const getPolygon = (props: Props) => {
-  const { length, slices } = props;
+  const { length, template } = props;
   const distance = 100 / (length + 1);
   const center = 50;
   const left = center - distance;
@@ -41,16 +41,16 @@ const getPolygon = (props: Props) => {
     },
   };
 
-  const template = slicesTemplates[slices];
+  const templatePoints = slicesTemplates[template];
 
   const polygonPoints =
-    points.top[template.top[0]] +
+    points.top[templatePoints.top[0]] +
     ', ' +
-    points.top[template.top[1]] +
+    points.top[templatePoints.top[1]] +
     ', ' +
-    points.bottom[template.bottom[1]] +
+    points.bottom[templatePoints.bottom[1]] +
     ', ' +
-    points.bottom[template.bottom[0]];
+    points.bottom[templatePoints.bottom[0]];
 
   return `polygon(${polygonPoints})`;
 };
@@ -78,7 +78,9 @@ const useStyles = createUseStyles({
     'clip-path': getPolygon,
 
     '&:hover': {
-      transform: 'scale(1.02)',
+      transform: ({ zoomOnHover }: Props) => {
+        return zoomOnHover ? 'scale(1.02)' : 'none';
+      },
       zIndex: '10',
     }
   }

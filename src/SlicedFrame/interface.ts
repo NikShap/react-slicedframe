@@ -5,12 +5,18 @@ interface CustomClasses {
   image: string;
 }
 
+interface SelectHandler {
+  (index?: number, image?: string): void;
+}
+
 export default interface Props extends React.HTMLAttributes<HTMLDivElement> {
   images: string[];
-  slices?: '\\' | '/' | '/\\' | '\\/';
+  template?: '\\' | '/' | '/\\' | '\\/';
   vertical?: boolean;
   customClasses?: CustomClasses;
   width: string | number;
   height: string | number;
-  onImageClick?: (index?: number, image?: string) => void;
+  onImageClick?: SelectHandler;
+  onImageHover?: SelectHandler;
+  zoomOnHover?: boolean;
 };

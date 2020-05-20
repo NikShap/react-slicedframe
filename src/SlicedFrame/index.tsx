@@ -8,9 +8,11 @@ import ImagePolygon from '../ImagePolygon';
 const SlicedFrame = (props: Props) => {
   const {
     images,
-    slices = '/',
+    template = '/',
     customClasses = { frame: '', image: '' },
     onImageClick,
+    onImageHover,
+    zoomOnHover = true,
   } = props;
   const classes = useStyles(props);
   const mergedClasses = {
@@ -20,7 +22,7 @@ const SlicedFrame = (props: Props) => {
   return (
     <div className={mergedClasses.frame}>
       {images.map((image, i) => {
-        let imageSlices = slices;
+        let imageSlices = template;
         if (imageSlices === '/\\' && i % 2 !== 0) {
           imageSlices = '\\/';
         } else if (imageSlices === '\\/' && i % 2 !== 0) {
@@ -30,12 +32,14 @@ const SlicedFrame = (props: Props) => {
         return (
           <ImagePolygon
             key={i}
-            slices={imageSlices}
+            template={imageSlices}
             image={image}
             index={i}
             length={images.length}
             customClass={customClasses.image}
             onImageClick={onImageClick}
+            onImageHover={onImageHover}
+            zoomOnHover={zoomOnHover}
           />
         );
       })}

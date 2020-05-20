@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 40px;
+  padding: 100px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -14,7 +14,9 @@ code {
     monospace;
 }
 
-.test {
-  width: 700px;
-  height: 500px;
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
 }
