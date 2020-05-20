@@ -6,11 +6,13 @@
 
 <!-- [![NPM](https://img.shields.io/npm/v/slicedframe.svg)](https://www.npmjs.com/package/slicedframe) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com) -->
 
+<!-- 
 ## Install
 
 ```bash
 npm install --save slicedframe
 ```
+-->
 
 ## Usage
 
